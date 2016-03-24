@@ -12,6 +12,7 @@ Dir['actions/*.rb'].each { |f| require_relative f }
 WEB_UI = true
 REQUEST_CONCURRENCY = 5
 REQUEST_LIMIT = 10            # -1 for unlimited
+BASE_URL = "https://www.teepublic.com"
 
 World.world.action_logger.level = Logger::INFO
 triggered = World.world.trigger(CreateFeed)

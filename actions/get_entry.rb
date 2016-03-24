@@ -13,7 +13,7 @@ class GetEntry < Dynflow::Action
 
   def run
     puts "GetEntry#run"
-    res = RestClient.get "https://www.teepublic.com/api/channel-advisor-designs/#{input[:id]}", Authorization: "Token token=#{ENV['TOKEN']}"
+    res = RestClient.get "#{BASE_URL}/api/channel-advisor-designs/#{input[:id]}", Authorization: "Token token=#{ENV['TOKEN']}"
     json = JSON.parse res.body
     output[:data] = json['result'].values
     # output[:data] = '{"foo":42}'
