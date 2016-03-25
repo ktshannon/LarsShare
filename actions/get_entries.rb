@@ -17,6 +17,5 @@ class GetEntries < Dynflow::Action
 
   def finalize
     puts "GetEntries#finalize"
-    output[:entries] = [1,2,3]
   end
 end
