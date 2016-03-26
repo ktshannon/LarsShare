@@ -10,7 +10,7 @@ class GetEntries < Dynflow::Action
   def create_sub_plans
     puts "GetEntries#create_sub_plans"
     captured = Dir['data/entries/*.json'].map { |f| $1.to_i if f =~ /(\d+)\.json$/ }
-    (input[:ids].reverse - captured)[0..REQUEST_LIMIT].map do |id|
+    (input[:ids].reverse - captured)[0...REQUEST_LIMIT].map do |id|
       trigger(GetEntry, id)
     end
   end
